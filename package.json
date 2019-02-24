@@ -2,13 +2,17 @@
   "name": "electron-react-boilerplate",
   "version": "1.0.0",
   "description": "Electron + React boilerplate using create-react-app",
-  "main": "electron/main.js",
+  "main": "main.js",
   "scripts": {
     "frontend": "cd app && npm start",
     "electron": "cd electron && npm start",
     "electron:local": "cd electron && npm run electron:prod",
     "build": "cd app && npm run build && cd .. && gulp",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist:all": "npm run build && electron-builder -mwl",
+    "dist:linux": "npm run build && electron-builder -l",
+    "dist:osx": "npm run build && electron-builder -m",
+    "dist:win": "npm run build  && electron-builder -w --x64"
   },
   "author": "Diego Bonavida <gecko.bona@gmail.com>",
   "license": "MIT",
@@ -26,7 +30,39 @@
     "url": "https://github.com/bonavida/electron-react-boilerplate/issues"
   },
   "devDependencies": {
+    "electron-builder": "^20.38.5",
     "gulp": "^4.0.0",
     "gulp-clean": "^0.4.0"
+  },
+  "build": {
+    "productName": "Electron React Boilerplate",
+    "appId": "bonavida.electron-react.org",
+    "files": {
+      "from": "dist/",
+      "filter": [
+        "**/*"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "AppImage"
+      ],
+      "category": "public.app.category.development"
+    },
+    "directories": {
+      "output": "release"
+    }
   }
 }

@@ -11,7 +11,9 @@
 
 # production
 **/build
+!electron/build
 /dist
+/release
 
 # IDEs and editors
 ./idea
