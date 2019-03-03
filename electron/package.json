@@ -2,7 +2,7 @@
   "name": "electron-react-boilerplate-electron",
   "version": "1.0.0",
   "description": "Electron + React boilerplate using create-react-app",
-  "main": "main.js",
+  "main": "./src/index.js",
   "scripts": {
     "electron": "electron .",
     "electron:prod": "electron ../dist",
@@ -12,9 +12,7 @@
   "author": "Diego Bonavida <gecko.bona@gmail.com>",
   "devDependencies": {
     "cross-env": "^5.2.0",
-    "electron": "^4.0.5"
-  },
-  "dependencies": {
+    "electron": "^4.0.5",
     "nodemon": "^1.18.10"
   }
 }
