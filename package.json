@@ -35,16 +35,17 @@
     "url": "https://github.com/bonavida/electron-react-boilerplate/issues"
   },
   "dependencies": {
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5"
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-scripts": "2.1.8"
   },
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "electron": "^4.1.0",
     "electron-builder": "^20.39.0",
     "nodemon": "^1.18.10",
-    "cross-env": "^5.2.0",
-    "rimraf": "^2.6.3"
+    "rimraf": "^2.6.3",
+    "typescript": "^3.3.3333"
   },
   "build": {
     "productName": "Electron React Boilerplate",
