@@ -2,17 +2,22 @@
   "name": "electron-react-boilerplate",
   "version": "1.0.0",
   "description": "Electron + React boilerplate using create-react-app",
+  "main": "electron/main.js",
+  "homepage": "./",
   "scripts": {
-    "frontend": "cd app && npm start",
-    "electron": "cd electron && npm start",
-    "electron:local": "cd electron && npm run electron:prod",
-    "build": "rimraf dist && cd app && npm run build && cd .. && gulp && rimraf app/build",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "preDist": "npm run build && cd dist && npm install && cd ..",
-    "dist:all": "npm run preDist && electron-builder -mwl",
-    "dist:win": "npm run preDist  && electron-builder -w --x64",
-    "dist:linux": "npm run preDist && electron-builder -l",
-    "dist:osx": "npm run preDist && electron-builder -m"
+    "start": "cross-env BROWSER=none NODE_PATH=./src react-scripts start",
+    "build:prod": "cross-env NODE_PATH=./src react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron:start": "electron .",
+    "electron": "cross-env NODE_ENV=dev ELECTRON_START_URL=http://localhost:3000 nodemon --watch . --exec 'yarn electron:start'",
+    "electron:local": "yarn electron:start",
+    "build": "rimraf build && yarn build:prod",
+    "preDist": "rimraf release && yarn build",
+    "dist:all": "yarn preDist && electron-builder -mwl",
+    "dist:win": "yarn preDist  && electron-builder -w --x64",
+    "dist:linux": "yarn preDist && electron-builder -l",
+    "dist:osx": "yarn preDist && electron-builder -m"
   },
   "author": "Diego Bonavida <gecko.bona@gmail.com>",
   "license": "MIT",
@@ -29,20 +34,27 @@
   "bugs": {
     "url": "https://github.com/bonavida/electron-react-boilerplate/issues"
   },
+  "dependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-scripts": "2.1.5",
+    "typescript": "^3.3.3333"
+  },
   "devDependencies": {
-    "electron-builder": "^20.38.5",
-    "gulp": "^4.0.0",
+    "electron": "^4.1.0",
+    "electron-builder": "^20.39.0",
+    "nodemon": "^1.18.10",
+    "cross-env": "^5.2.0",
     "rimraf": "^2.6.3"
   },
   "build": {
     "productName": "Electron React Boilerplate",
     "appId": "bonavida.electron-react.org",
+    "electronVersion": "4.1.0",
+    "extends": null,
     "files": [
-      "dist/src/**/*",
-      "dist/node_modules"
-    ],
-    "extraResources": [
-      "dist/build/**/*"
+      "build/**/*",
+      "electron/*"
     ],
     "win": {
       "target": [
@@ -66,5 +78,10 @@
       "output": "release"
     }
   },
-  "dependencies": {}
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

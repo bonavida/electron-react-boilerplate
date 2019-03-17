@@ -21,34 +21,61 @@ git clone https://github.com/bonavida/electron-react-boilerplate.git
 
 ``` bash
 cd electron-react-boilerplate
-npm install
+yarn install
 ```
 
 ## Development
 
-To run the app in dev mode with hot-reloader run in two separate consoles:
+To run the app in dev mode with hot-reloader, run in two separate consoles:
 
 To run the front-end
 ``` bash
-npm run frontend
+yarn start
 ```
 
 and to run electron
 
 ``` bash
-npm run electron
+yarn electron
 ```
 
 ## Build the app
 
 ```bash
-npm run build
+yarn build
 ```
 
-The built files are placed in `/dist` at the root directory.
+The built files are placed in `/build` at the root directory.
 
 If you want to run electron with the built files, run the following command:
 
 ```bash
-npm run electron:local
+yarn electron:local
+```
+
+## App packaging and distribution
+
+To package the app, depending on the desired platform, use the following commands:
+
+``` bash
+yarn dist:win     // Windows
+yarn dist:linux   // Linux
+yarn dist:osx     // Mac
+yarn dist:all     // All platforms
+```
+
+The package files are places in `/release`.
+
+## Preload script
+This file, placed at `electron/preload.js`, is needed to expose the electron API inside the React app. It lets your UI communicate with the native electron APIs.
+
+#### Usage
+Inside the React app we have access to the native electron APIs trough `window.electron`. In the example below we use the electron module `ipcRenderer`. As you can see, we have added some extra code just to be sure that this won't throw an error if the app is deployed in the web browser and not in electron.
+
+```
+const { ipcRenderer } = window.electron || {};
+
+...
+
+ipcRenderer && ipcRenderer.send('message');  // This will only run in electron
 ```
