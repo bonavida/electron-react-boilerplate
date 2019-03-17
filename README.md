@@ -64,7 +64,7 @@ yarn dist:osx     // Mac
 yarn dist:all     // All platforms
 ```
 
-The package files are places in `/release`.
+The package files are placed in `/release`.
 
 ## Preload script
 This file, placed at `electron/preload.js`, is needed to expose the electron API inside the React app. It lets your UI communicate with the native electron APIs.
