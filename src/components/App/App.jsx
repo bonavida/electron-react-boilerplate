@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../../assets/logo.svg';
-import './App.css';
+import logo from '../../assets/img/logo.svg';
 
 const { remote } = window.electron || {};
 

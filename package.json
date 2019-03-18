@@ -35,6 +35,7 @@
     "url": "https://github.com/bonavida/electron-react-boilerplate/issues"
   },
   "dependencies": {
+    "node-sass": "^4.11.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-scripts": "2.1.8"
