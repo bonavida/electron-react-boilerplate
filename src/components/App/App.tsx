@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import logo from '../../assets/img/logo.svg';
 
-const { remote } = window.electron || {};
+const { remote }: any = window.electron || {};
 
 class App extends Component {
   handleClick() {
     remote && remote.dialog.showMessageBox({
       type: 'info',
       title: 'Electron dialog',
-      message: 'This is an electron dialog',
-      parent: remote.getCurrentWindow()
+      message: 'This is an electron dialog'
     });
   }
 
