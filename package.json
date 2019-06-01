@@ -5,8 +5,8 @@
   "main": "electron/main.js",
   "homepage": "./",
   "scripts": {
-    "start": "cross-env BROWSER=none NODE_PATH=./src react-scripts start",
-    "build:prod": "cross-env NODE_PATH=./src react-scripts build",
+    "start": "cross-env BROWSER=none react-scripts start",
+    "build:prod": "cross-env react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron:start": "electron .",
@@ -35,18 +35,23 @@
     "url": "https://github.com/bonavida/electron-react-boilerplate/issues"
   },
   "dependencies": {
-    "node-sass": "^4.11.0",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8"
+    "@types/jest": "^24.0.13",
+    "@types/node": "^12.0.4",
+    "@types/react": "^16.8.19",
+    "@types/react-dom": "^16.8.4",
+    "node-sass": "^4.12.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^3.0.1",
+    "typescript": "^3.5.1"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
-    "electron": "^4.1.0",
-    "electron-builder": "^20.39.0",
-    "nodemon": "^1.18.10",
-    "rimraf": "^2.6.3",
-    "typescript": "^3.3.3333"
+    "electron": "^5.0.2",
+    "electron-builder": "^20.41.0",
+    "nodemon": "^1.19.1",
+    "rimraf": "^2.6.3"
   },
   "build": {
     "productName": "Electron React Boilerplate",
