@@ -4,9 +4,15 @@ React + Electron boilerplate.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+## Features
+React v16.8
+React Router
+Sass
+Typescript
+
 ## Getting started
 
-Clone the repository locally :
+Clone the repository locally:
 
 ``` bash
 git clone https://github.com/bonavida/electron-react-boilerplate.git
@@ -73,7 +79,7 @@ This file, placed at `electron/preload.js`, is needed to expose the electron API
 Inside the React app we have access to the native electron APIs trough `window.electron`. In the example below we use the electron module `ipcRenderer`. As you can see, we have added some extra code just to be sure that this won't throw an error if the app is deployed in the web browser and not in electron.
 
 ```
-const { ipcRenderer } = window.electron || {};
+const { ipcRenderer }: any  = window.electron || {};
 
 ...
 
