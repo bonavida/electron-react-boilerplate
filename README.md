@@ -5,10 +5,10 @@ React + Electron boilerplate.
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ## Features
-React v16.8
-React Router
-Sass
-Typescript
+- React v16.8
+- React Router
+- Sass
+- Typescript
 
 ## Getting started
 
@@ -75,7 +75,7 @@ The package files are placed in `/release`.
 ## Preload script
 This file, placed at `electron/preload.js`, is needed to expose the electron API inside the React app. It lets your UI communicate with the native electron APIs.
 
-#### Usage
+### Electron API Usage
 Inside the React app we have access to the native electron APIs trough `window.electron`. In the example below we use the electron module `ipcRenderer`. As you can see, we have added some extra code just to be sure that this won't throw an error if the app is deployed in the web browser and not in electron.
 
 ```
