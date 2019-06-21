@@ -9,6 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - React Router
 - Sass
 - Typescript
+- Electron
 
 ## Getting started
 
