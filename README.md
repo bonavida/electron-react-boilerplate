@@ -27,7 +27,7 @@ git clone https://github.com/bonavida/electron-react-boilerplate.git
 
 ``` bash
 cd electron-react-boilerplate
-yarn install
+npm install
 ```
 
 ## Development
@@ -36,19 +36,19 @@ To run the app in dev mode with hot-reloader, run in two separate consoles:
 
 To run the front-end
 ``` bash
-yarn start
+npm start
 ```
 
 and to run electron
 
 ``` bash
-yarn electron
+npm run electron
 ```
 
 ## Build the app
 
 ```bash
-yarn build
+npm run build
 ```
 
 The built files are placed in `/build` at the root directory.
@@ -56,7 +56,7 @@ The built files are placed in `/build` at the root directory.
 If you want to run electron with the built files, run the following command:
 
 ```bash
-yarn electron:local
+npm run electron:local
 ```
 
 ## App packaging and distribution
@@ -64,10 +64,10 @@ yarn electron:local
 To package the app, depending on the desired platform, use the following commands:
 
 ``` bash
-yarn dist:win     // Windows
-yarn dist:linux   // Linux
-yarn dist:osx     // Mac
-yarn dist:all     // All platforms
+npm run dist:win     // Windows
+npm run dist:linux   // Linux
+npm run dist:osx     // Mac
+npm run dist:all     // All platforms
 ```
 
 The package files are placed in `/release`.
